@@ -62,13 +62,13 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/server_1"
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/audiowide"
                 android:text="Players in this room:"
                 android:textAlignment="center"
-                android:textSize="16sp" />
+                android:textSize="16sp"  />
 
             <Space
                 android:layout_width="50dp"
@@ -76,7 +76,7 @@
                 android:layout_weight="1" />
 
             <TextView
-                android:id="@+id/txt_player_in_server_2"
+                android:id="@+id/txt_players_in_server_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/audiowide"
@@ -86,7 +86,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btn_server1"
+            android:id="@+id/btn_server_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Choose server 1"
@@ -103,9 +103,10 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/server_1"
+                android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:fontFamily="@font/audiowide"
                 android:text="Players in this room:"
                 android:textAlignment="center"
@@ -117,7 +118,7 @@
                 android:layout_weight="1" />
 
             <TextView
-                android:id="@+id/txt_player_in_server_2"
+                android:id="@+id/txt_players_in_server_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/audiowide"
