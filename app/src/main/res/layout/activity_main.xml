@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/audiowide"
-            android:text="Player Score"
+            android:text="Players Score"
             android:textAlignment="center"
             android:textSize="20sp" />
     </LinearLayout>
@@ -85,7 +85,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="30dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -111,9 +111,21 @@
                 android:fontFamily="@font/audiowide"
                 android:text="0"
                 android:textAlignment="viewEnd"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
         </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="70dp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Start Game"
+            android:textSize="20sp"
+            android:fontFamily="@font/audiowide" />
 
     </LinearLayout>
 
