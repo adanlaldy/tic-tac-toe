@@ -89,9 +89,10 @@
             android:id="@+id/btn_server_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/audiowide"
+            android:onClick="goToServer1"
             android:text="Choose server 1"
-            android:textSize="20sp"
-            android:fontFamily="@font/audiowide" />
+            android:textSize="20sp" />
 
         <Space
             android:layout_width="match_parent"
@@ -131,8 +132,9 @@
             android:id="@+id/btn_server_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/audiowide"
+            android:onClick="goToServer2"
             android:text="Choose server 2"
-            android:textSize="20sp"
-            android:fontFamily="@font/audiowide" />
+            android:textSize="20sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

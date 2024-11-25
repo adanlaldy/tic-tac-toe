@@ -24,30 +24,17 @@ public class LobbyActivity extends AppCompatActivity {
 
         buttonServer1 = findViewById(R.id.btn_server_1);
         buttonServer2 = findViewById(R.id.btn_server_2);
-
-
-        buttonServer1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goToServer1();
-            }
-        });
-
-        buttonServer2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goToServer2();
-            }
-        });
     }
 
-    public void goToServer1() {
+    public void goToServer1(View view) {
         Intent server1 = new Intent(getApplicationContext(), MainActivity.class);
+        server1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(server1);
     }
 
-    public void goToServer2() {
+    public void goToServer2(View view) {
         Intent server2 = new Intent(getApplicationContext(), MainActivity.class);
+        server2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(server2);
     }
 }
