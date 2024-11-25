@@ -115,18 +115,34 @@
 
         </LinearLayout>
 
+        <Button
+            android:id="@+id/btn_clear_scores"
+            android:layout_width="200sp"
+            android:layout_height="40sp"
+            android:fontFamily="@font/audiowide"
+            android:text="Clear scores"
+            android:textSize="10dp" />
+
         <Space
             android:layout_width="match_parent"
             android:layout_height="70dp" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btn_start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/audiowide"
             android:text="Start Game"
-            android:textSize="20sp"
-            android:fontFamily="@font/audiowide" />
-
+            android:textSize="20sp" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_back_to_lobby"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/audiowide"
+        android:text="Back to lobby"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
