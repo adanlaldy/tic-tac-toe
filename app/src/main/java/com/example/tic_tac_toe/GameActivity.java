@@ -4,140 +4,78 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Arrays;
-
+/**
+ * Activity that manages the Tic Tac Toe game logic, including handling player moves,
+ * checking for a winner, updating the game board, and managing the score.
+ */
 public class GameActivity extends AppCompatActivity {
 
+    // Database object to manage game state.
+    private Database myDatabase;
 
-    /*@Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_game);
-    }*/
-    boolean gameActive = true;
+    // TextView that displays the current game status (e.g., whose turn it is or who won).
+    private TextView status;
 
-    // Player representation
-    // 0 - X
-    // 1 - O
-    int activePlayer = 0;
-    int[] gameState = {2, 2, 2, 2, 2, 2, 2, 2, 2};
+    // Boolean flag to indicate if the game is active or not.
+    private boolean gameActive = true;
 
-    // State meanings:
-    //    0 - X
-    //    1 - O
-    //    2 - Null
-    // put all win positions in a 2D array
-    int[][] winPositions = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8},
+    // Represents the currently active player (0 for X, 1 for O).
+    private int activePlayer = 0;
+
+    // 2D array representing the possible win positions on the Tic Tac Toe board.
+    private final int[][] winPositions = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8},
             {0, 3, 6}, {1, 4, 7}, {2, 5, 8},
             {0, 4, 8}, {2, 4, 6}};
-    public static int counter = 0;
 
-    // this function will be called every time a
-    // players tap in an empty box of the grid
-    public void playerTap(View view) {
-        ImageView img = (ImageView) view;
-        int tappedImage = Integer.parseInt(img.getTag().toString());
+    // Counter to track the number of taps on the board.
+    private static int counter = 0;
 
-        // game reset function will be called
-        // if someone wins or the boxes are full
-        if (!gameActive) {
-            gameReset(view);
-            //Reset the counter
-            counter = 0;
-        }
+    // ImageView object representing the tapped grid cell.
+    private ImageView img;
 
-        // if the tapped image is empty
-        if (gameState[tappedImage] == 2) {
-            // increase the counter
-            // after every tap
-            counter++;
+    /**
+     * Initializes the game activity, sets up necessary components, and loads the game state.
+     *
+     * @param savedInstanceState The previously saved instance state, if available.
+     */
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_game);
 
-            // check if its the last box
-            if (counter == 9) {
-                // reset the game
-                gameActive = false;
-            }
-
-            // mark this position
-            gameState[tappedImage] = activePlayer;
-
-            // this will give a motion
-            // effect to the image
-            img.setTranslationY(-1000f);
-
-            // change the active player
-            // from 0 to 1 or 1 to 0
-            if (activePlayer == 0) {
-                // set the image of x
-                img.setImageResource(R.drawable.x);
-                activePlayer = 1;
-                TextView status = findViewById(R.id.status);
-
-                // change the status
-                status.setText("O's Turn - Tap to play");
-            } else {
-                // set the image of o
-                img.setImageResource(R.drawable.o);
-                activePlayer = 0;
-                TextView status = findViewById(R.id.status);
-
-                // change the status
-                status.setText("X's Turn - Tap to play");
-            }
-            img.animate().translationYBy(1000f).setDuration(300);
-        }
-        int flag = 0;
-        // Check if any player has won if counter is > 4 as min 5 taps are
-        // required to declare a winner
-        if (counter > 4) {
-            for (int[] winPosition : winPositions) {
-                if (gameState[winPosition[0]] == gameState[winPosition[1]] &&
-                        gameState[winPosition[1]] == gameState[winPosition[2]] &&
-                        gameState[winPosition[0]] != 2) {
-                    flag = 1;
-
-                    // Somebody has won! - Find out who!
-                    String winnerStr;
-
-                    // game reset function be called
-                    gameActive = false;
-                    if (gameState[winPosition[0]] == 0) {
-                        winnerStr = "X has won";
-                        updateScore("score_playerA");
-                    } else {
-                        winnerStr = "O has won";
-                        updateScore("score_playerB");
-                    }
-                    // Update the status bar for winner announcement
-                    TextView status = findViewById(R.id.status);
-                    status.setText(winnerStr);
-                }
-            }
-            // set the status if the match draw
-            if (counter == 9 && flag == 0) {
-                TextView status = findViewById(R.id.status);
-                status.setText("Match Draw");
-            }
-        }
+        status = findViewById(R.id.status);
+        myDatabase = new Database();
     }
 
-    // reset the game
+    /**
+     * Navigates to the score page where the player can view the game statistics.
+     *
+     * @param view The view that triggered the navigation to the score page.
+     */
+    public void goToScorePage(View view) {
+        Intent score = new Intent(getApplicationContext(), MainActivity.class);
+        score.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(score);
+    }
+
+    /**
+     * Resets the game, clearing the game state and updating the board.
+     *
+     * @param view The view that triggered the reset action.
+     */
     public void gameReset(View view) {
         gameActive = true;
         activePlayer = 0;
 
-        //set all position to Null
-        Arrays.fill(gameState, 2);
+        // Set all positions to null (state = 2)
+        myDatabase.resetCurrentGameState();
 
-        // remove all the images from the boxes inside the grid
+        // Remove all images from the grid
         ((ImageView) findViewById(R.id.block1)).setImageResource(0);
         ((ImageView) findViewById(R.id.block2)).setImageResource(0);
         ((ImageView) findViewById(R.id.block3)).setImageResource(0);
@@ -148,26 +86,71 @@ public class GameActivity extends AppCompatActivity {
         ((ImageView) findViewById(R.id.block8)).setImageResource(0);
         ((ImageView) findViewById(R.id.block9)).setImageResource(0);
 
-        TextView status = findViewById(R.id.status);
-        status.setText("X's Turn - Tap to play");
+        // Set initial status text
+        status.setText(getString(R.string.x_turn));
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game);
+    /**
+     * Handles the player's tap on a grid cell. Updates the game state, checks for a winner,
+     * and updates the screen accordingly.
+     *
+     * @param view The view (Tic Tac Toe grid cell) that was tapped.
+     */
+    public void playerTap(View view) {
+        img = (ImageView) view;
 
-        Button exit=findViewById(R.id.btn_exit_game);
-        exit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(GameActivity.this, MainActivity.class);
-                int REQUEST_CODE_ADD_NOTE=1;
-                startActivityForResult(intent, REQUEST_CODE_ADD_NOTE);
+        // If the game is not active, reset the game
+        if (!gameActive) {
+            gameReset(view);
+            // Reset the tap counter
+            counter = 0;
+        }
+        updatePositions();
+        checkIfSomeoneHasWon();
+    }
+
+    /**
+     * Updates the UI by adding a translation effect to the tapped image, changing the image to
+     * reflect the active player (X or O).
+     */
+    private void updateUserScreen() {
+        // This will give a motion effect to the image
+        img.setTranslationY(-1000f);
+        img.setImageResource(activePlayer == 0 ? R.drawable.x : R.drawable.o);
+        img.animate().translationYBy(1000f).setDuration(300);
+    }
+
+    /**
+     * Updates the positions on the game board, marks the tapped cell, and switches the active player.
+     */
+    private void updatePositions() {
+        int tappedImage = Integer.parseInt(img.getTag().toString());
+
+        // If the tapped image is empty (state is 2)
+        if (myDatabase.getCurrentGameState()[tappedImage] == 2) {
+
+            // Increase the counter after each tap
+            counter++;
+
+            // Mark the position in the Firebase database
+            myDatabase.setGameState(tappedImage, activePlayer);
+
+            // Update the UI to reflect the new state
+            updateUserScreen();
+
+            // Change the status text based on the active player
+            if (gameActive) {
+                activePlayer = (activePlayer == 0) ? 1 : 0;
+                status.setText(activePlayer == 0 ? getString(R.string.x_turn) : getString(R.string.o_turn));
             }
-        });
+        }
     }
 
+    /**
+     * Updates the score for the specified player.
+     *
+     * @param player The player for whom the score should be updated (e.g., "score_playerA").
+     */
     private void updateScore(String player) {
         SharedPreferences prefs = getSharedPreferences("game_prefs", MODE_PRIVATE);
         int currentScore = prefs.getInt(player, 0);
@@ -175,5 +158,37 @@ public class GameActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = prefs.edit();
         editor.putInt(player, currentScore);
         editor.apply();
+    }
+
+
+    /**
+     * Checks if any player has won the game based on the current game state.
+     * The function checks for winning combinations on the board.
+     */
+    private void checkIfSomeoneHasWon() {
+        // A minimum of 5 taps are needed to declare a winner
+        if (counter > 4) {
+            for (int[] winPosition : winPositions) {
+                if (myDatabase.getCurrentGameState()[winPosition[0]] == myDatabase.getCurrentGameState()[winPosition[1]] &&
+                        myDatabase.getCurrentGameState()[winPosition[1]] == myDatabase.getCurrentGameState()[winPosition[2]] &&
+                        myDatabase.getCurrentGameState()[winPosition[0]] != 2) {
+
+                    // Game over if someone wins
+                    gameActive = false;
+                    if (myDatabase.getCurrentGameState()[winPosition[0]] == 0) {
+                        status.setText(getString(R.string.x_wins));
+                        updateScore("score_playerA");
+                    } else {
+                        status.setText(getString(R.string.o_wins));
+                        updateScore("score_playerB");
+                    }
+                }
+            }
+            // Set the status if the match ends in a draw
+            if (counter == 9 && gameActive) {
+                gameActive = false;
+                status.setText(getString(R.string.match_draw));
+            }
+        }
     }
 }
