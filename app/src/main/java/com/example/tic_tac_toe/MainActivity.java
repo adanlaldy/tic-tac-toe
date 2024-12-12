@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view The view that triggered this method (typically the button for lobby navigation).
      */
-    public void goToLobbiesPage(View view) {
+    public void goToLobbyPage(View view) {
         Intent lobbies = new Intent(getApplicationContext(), LobbyActivity.class);
         lobbies.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // Clears the activity stack
         startActivity(lobbies);
