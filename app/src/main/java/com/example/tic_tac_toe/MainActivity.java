@@ -258,8 +258,8 @@ public class MainActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                         // getting all turns of the connection
-                        for(DataSnapshot dataSnapshot : snapshot.getChildren()){
-                            if(dataSnapshot.getChildrenCount() == 2){
+                        for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                            if (dataSnapshot.getChildrenCount() == 2) {
 
                                 // getting box position selected by the user
                                 final int getBoxPosition = Integer.parseInt(dataSnapshot.child("box_position").getValue(String.class));
@@ -268,28 +268,28 @@ public class MainActivity extends AppCompatActivity {
                                 final String getPlayerId = dataSnapshot.child("player_id").getValue(String.class);
 
                                 // checking if user has not selected the box before
-                                if(!doneBoxes.contains(String.valueOf(getBoxPosition))){
+                                if (!doneBoxes.contains(String.valueOf(getBoxPosition))) {
 
                                     // select the box
                                     doneBoxes.add(String.valueOf(getBoxPosition));
 
-                                    if(getBoxPosition == 1){
+                                    if (getBoxPosition == 1) {
                                         selectBox(image1, getBoxPosition, getPlayerId);
-                                    }else if(getBoxPosition == 2){
+                                    } else if (getBoxPosition == 2) {
                                         selectBox(image2, getBoxPosition, getPlayerId);
-                                    }else if(getBoxPosition == 3){
+                                    } else if (getBoxPosition == 3) {
                                         selectBox(image3, getBoxPosition, getPlayerId);
-                                    }else if(getBoxPosition == 4){
+                                    } else if (getBoxPosition == 4) {
                                         selectBox(image4, getBoxPosition, getPlayerId);
-                                    }else if(getBoxPosition == 5){
+                                    } else if (getBoxPosition == 5) {
                                         selectBox(image5, getBoxPosition, getPlayerId);
-                                    }else if(getBoxPosition == 6){
+                                    } else if (getBoxPosition == 6) {
                                         selectBox(image6, getBoxPosition, getPlayerId);
-                                    }else if(getBoxPosition == 7){
+                                    } else if (getBoxPosition == 7) {
                                         selectBox(image7, getBoxPosition, getPlayerId);
-                                    }else if(getBoxPosition == 8){
+                                    } else if (getBoxPosition == 8) {
                                         selectBox(image8, getBoxPosition, getPlayerId);
-                                    }else if(getBoxPosition == 9){
+                                    } else if (getBoxPosition == 9) {
                                         selectBox(image9, getBoxPosition, getPlayerId);
                                     }
                                 }
@@ -310,18 +310,17 @@ public class MainActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                         // check if a user has won the match
-                        if(snapshot.hasChild("player_id")){
+                        if (snapshot.hasChild("player_id")) {
 
                             String getWinPlayerId = snapshot.child("player_id").getValue(String.class);
 
                             final WinDialog winDialog;
 
-                            if(getWinPlayerId.equals(playerUniqueId)){
+                            if (getWinPlayerId.equals(playerUniqueId)) {
 
                                 // show win dialog
                                 winDialog = new WinDialog(MainActivity.this, "You won the game");
-                            }
-                            else{
+                            } else {
 
                                 // show win dialog
                                 winDialog = new WinDialog(MainActivity.this, "Opponent won the game");
@@ -348,8 +347,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 // check if the bos is not selected before and current user's player turn
-                if(!doneBoxes.contains("1") && playerTurn.equals(playerUniqueId)){
-                    ((ImageView)v).setImageResource(R.drawable.x);
+                if (!doneBoxes.contains("1") && playerTurn.equals(playerUniqueId)) {
+                    ((ImageView) v).setImageResource(R.drawable.x);
 
                     // send selected box position and player unique id to firebase database
                     databaseReference.child("turns").child(connectionId).child(String.valueOf(doneBoxes.size() + 1)).child("box_position").setValue("1");
@@ -366,8 +365,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 // check if the bos is not selected before and current user's player turn
-                if(!doneBoxes.contains("2") && playerTurn.equals(playerUniqueId)){
-                    ((ImageView)v).setImageResource(R.drawable.x);
+                if (!doneBoxes.contains("2") && playerTurn.equals(playerUniqueId)) {
+                    ((ImageView) v).setImageResource(R.drawable.x);
 
                     // send selected box position and player unique id to firebase database
                     databaseReference.child("turns").child(connectionId).child(String.valueOf(doneBoxes.size() + 1)).child("box_position").setValue("2");
@@ -384,8 +383,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 // check if the bos is not selected before and current user's player turn
-                if(!doneBoxes.contains("3") && playerTurn.equals(playerUniqueId)){
-                    ((ImageView)v).setImageResource(R.drawable.x);
+                if (!doneBoxes.contains("3") && playerTurn.equals(playerUniqueId)) {
+                    ((ImageView) v).setImageResource(R.drawable.x);
 
                     // send selected box position and player unique id to firebase database
                     databaseReference.child("turns").child(connectionId).child(String.valueOf(doneBoxes.size() + 1)).child("box_position").setValue("3");
@@ -402,8 +401,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 // check if the bos is not selected before and current user's player turn
-                if(!doneBoxes.contains("4") && playerTurn.equals(playerUniqueId)){
-                    ((ImageView)v).setImageResource(R.drawable.x);
+                if (!doneBoxes.contains("4") && playerTurn.equals(playerUniqueId)) {
+                    ((ImageView) v).setImageResource(R.drawable.x);
 
                     // send selected box position and player unique id to firebase database
                     databaseReference.child("turns").child(connectionId).child(String.valueOf(doneBoxes.size() + 1)).child("box_position").setValue("4");
@@ -420,8 +419,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 // check if the bos is not selected before and current user's player turn
-                if(!doneBoxes.contains("5") && playerTurn.equals(playerUniqueId)){
-                    ((ImageView)v).setImageResource(R.drawable.x);
+                if (!doneBoxes.contains("5") && playerTurn.equals(playerUniqueId)) {
+                    ((ImageView) v).setImageResource(R.drawable.x);
 
                     // send selected box position and player unique id to firebase database
                     databaseReference.child("turns").child(connectionId).child(String.valueOf(doneBoxes.size() + 1)).child("box_position").setValue("5");
@@ -438,8 +437,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 // check if the bos is not selected before and current user's player turn
-                if(!doneBoxes.contains("6") && playerTurn.equals(playerUniqueId)){
-                    ((ImageView)v).setImageResource(R.drawable.x);
+                if (!doneBoxes.contains("6") && playerTurn.equals(playerUniqueId)) {
+                    ((ImageView) v).setImageResource(R.drawable.x);
 
                     // send selected box position and player unique id to firebase database
                     databaseReference.child("turns").child(connectionId).child(String.valueOf(doneBoxes.size() + 1)).child("box_position").setValue("6");
@@ -456,8 +455,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 // check if the bos is not selected before and current user's player turn
-                if(!doneBoxes.contains("7") && playerTurn.equals(playerUniqueId)){
-                    ((ImageView)v).setImageResource(R.drawable.x);
+                if (!doneBoxes.contains("7") && playerTurn.equals(playerUniqueId)) {
+                    ((ImageView) v).setImageResource(R.drawable.x);
 
                     // send selected box position and player unique id to firebase database
                     databaseReference.child("turns").child(connectionId).child(String.valueOf(doneBoxes.size() + 1)).child("box_position").setValue("7");
@@ -474,8 +473,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 // check if the bos is not selected before and current user's player turn
-                if(!doneBoxes.contains("8") && playerTurn.equals(playerUniqueId)){
-                    ((ImageView)v).setImageResource(R.drawable.x);
+                if (!doneBoxes.contains("8") && playerTurn.equals(playerUniqueId)) {
+                    ((ImageView) v).setImageResource(R.drawable.x);
 
                     // send selected box position and player unique id to firebase database
                     databaseReference.child("turns").child(connectionId).child(String.valueOf(doneBoxes.size() + 1)).child("box_position").setValue("8");
@@ -492,8 +491,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 // check if the bos is not selected before and current user's player turn
-                if(!doneBoxes.contains("9") && playerTurn.equals(playerUniqueId)){
-                    ((ImageView)v).setImageResource(R.drawable.x);
+                if (!doneBoxes.contains("9") && playerTurn.equals(playerUniqueId)) {
+                    ((ImageView) v).setImageResource(R.drawable.x);
 
                     // send selected box position and player unique id to firebase database
                     databaseReference.child("turns").child(connectionId).child(String.valueOf(doneBoxes.size() + 1)).child("box_position").setValue("9");
@@ -517,15 +516,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void selectBox(ImageView imageView, int selectedBoxPosition, String selectedByPlayer){
+    private void selectBox(ImageView imageView, int selectedBoxPosition, String selectedByPlayer) {
 
         boxesSelectedBy[selectedBoxPosition - 1] = selectedByPlayer;
 
-        if(selectedByPlayer.equals(playerUniqueId)){
+        if (selectedByPlayer.equals(playerUniqueId)) {
             imageView.setImageResource(R.drawable.x);
             playerTurn = opponentUniqueId;
-        }
-        else {
+        } else {
             imageView.setImageResource(R.drawable.o);
             playerTurn = playerUniqueId;
         }
@@ -533,21 +531,21 @@ public class MainActivity extends AppCompatActivity {
         applyPlayerTurn(playerTurn);
 
         // checking wether player has won the match
-        if(checkPlayerWin(selectedByPlayer)){
+        if (checkPlayerWin(selectedByPlayer)) {
 
             // sending won player unique id to firebase database who opponent can be notified
             databaseReference.child("won").child(connectionId).child("player_id").setValue(selectedByPlayer);
         }
 
         // over the game if there is no box left to be selected
-        if(doneBoxes.size() == 9){
+        if (doneBoxes.size() == 9) {
             final WinDialog winDialog = new WinDialog(MainActivity.this, "It is a Draw!");
             winDialog.setCancelable(false);
             winDialog.show();
         }
     }
 
-    private boolean checkPlayerWin(String playerId){
+    private boolean checkPlayerWin(String playerId) {
 
         boolean isPlayerWon = false;
 
@@ -557,13 +555,13 @@ public class MainActivity extends AppCompatActivity {
             final int[] combination = combinationsList.get(i);
 
             // checking last three turn of user
-            if(boxesSelectedBy[combination[0]].equals(playerId) &&
+            if (boxesSelectedBy[combination[0]].equals(playerId) &&
                     boxesSelectedBy[combination[1]].equals(playerId) &&
-                    boxesSelectedBy[combination[2]].equals(playerId)){
+                    boxesSelectedBy[combination[2]].equals(playerId)) {
                 isPlayerWon = true;
             }
         }
 
-        return  isPlayerWon;
+        return isPlayerWon;
     }
 }

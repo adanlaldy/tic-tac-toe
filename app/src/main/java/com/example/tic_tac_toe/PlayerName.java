@@ -31,7 +31,7 @@ public class PlayerName extends AppCompatActivity {
                 final String getPlayerName = playerNameEt.getText().toString();
 
                 // checking whether player has entered his name
-                if (getPlayerName.isEmpty()){
+                if (getPlayerName.isEmpty()) {
                     Toast.makeText(PlayerName.this, "Please enter player name", Toast.LENGTH_SHORT).show();
                 } else {
                     // creating intent to open MainActivity
