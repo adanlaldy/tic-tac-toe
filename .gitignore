@@ -1,7 +1,43 @@
-# Android/IntelliJ
-.idea/
-*.iml
+# Directories
+/.gradle/
+/.idea/
+/build/
+/captures/
+/output/
+
+# Gradle files
 .gradle/
 /local.properties
-/build/
+*.iml
+
+# Log files
+*.log
+
+# OS-specific files
 .DS_Store
+Thumbs.db
+
+# Keystore files
+*.jks
+*.keystore
+
+# Android Studio settings
+/.idea/workspace.xml
+/.idea/libraries/
+/.idea/caches
+.idea/modules.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/misc.xml
+
+# Firebase and Google Services
+# Exclude google-services.json if the project is public. If it's private, you can include it.
+# Otherwise, share this file securely via another means.
+# /app/google-services.json
+
+# Crashlytics
+/fabric.properties
+
+# Proguard
+/proguard-rules.pro
