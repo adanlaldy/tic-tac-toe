@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="dark_blue">#101132</color>
+    <color name="purple">#6648C3</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">tic-tac-toe</string>
+    <string name="firebase_database_url" translatable="false">https://tic-tac-toe-1d958-default-rtdb.europe-west1.firebasedatabase.app</string>
+    <string name="gcm_defaultSenderId" translatable="false">725461104278</string>
+    <string name="google_api_key" translatable="false">AIzaSyCZjflyOtgWst355fOU3iNkPg8zSTpAW9A</string>
+    <string name="google_app_id" translatable="false">1:725461104278:android:cec23e9723b8cd50e434b7</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCZjflyOtgWst355fOU3iNkPg8zSTpAW9A</string>
+    <string name="google_storage_bucket" translatable="false">tic-tac-toe-1d958.firebasestorage.app</string>
+    <string name="match_draw">Match Draw</string>
+    <string name="o_turn">O\'s Turn - Tap to play</string>
+    <string name="o_wins">O has won</string>
+    <string name="players_score">Players score</string>
+    <string name="project_id" translatable="false">tic-tac-toe-1d958</string>
+    <string name="x_turn">X\'s Turn - Tap to play</string>
+    <string name="x_wins">X has won</string>
+    <style name="Base.Theme.Tictactoe" parent="Theme.AppCompat.NoActionBar">
+
+        
+        
+    </style>
+    <style name="Theme.Tictactoe" parent="Base.Theme.Tictactoe"/>
+</resources>

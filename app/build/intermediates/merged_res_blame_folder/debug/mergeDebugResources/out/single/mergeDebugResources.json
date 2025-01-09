@@ -1,0 +1,118 @@
+[
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/xml_backup_rules.xml.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/drawable_o.png.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/drawable/o.png"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/drawable_x.png.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/drawable/x.png"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/drawable_round_back_purple_20.xml.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/drawable/round_back_purple_20.xml"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/drawable_round_back_dark_blue_20.xml.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/drawable/round_back_dark_blue_20.xml"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/drawable_background.png.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/drawable/background.png"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/drawable_round_back_blue_100.xml.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/drawable/round_back_blue_100.xml"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/font_audiowide.ttf.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/font/audiowide.ttf"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/layout_activity_main.xml.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/drawable_round_back_dark_blue_stroke.xml.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/drawable/round_back_dark_blue_stroke.xml"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/layout_win_dialog_layout.xml.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/layout/win_dialog_layout.xml"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/mipmap-anydpi_ic_launcher.xml.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/mipmap-anydpi/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/drawable_grid.png.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/drawable/grid.png"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/mipmap-anydpi_ic_launcher_round.xml.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/mipmap-anydpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/drawable_transparent.png.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/drawable/transparent.png"
+    },
+    {
+        "merged": "com.example.tic_tac_toe.app-debug-35:/layout_activity_player_name.xml.flat",
+        "source": "com.example.tic_tac_toe.app-main-37:/layout/activity_player_name.xml"
+    }
+]

@@ -1,0 +1,5 @@
+com.example.tic_tac_toe.test.app-core-1.6.1-0 /home/nada/.gradle/caches/8.9/transforms/d3a3bea0afac6f4b8ac5c2223ee816d5/transformed/core-1.6.1/res
+com.example.tic_tac_toe.test.app-androidTest-1 /home/nada/AndroidStudioProjects/tictactoe/app/build/generated/res/resValues/androidTest/debug
+com.example.tic_tac_toe.test.app-mergeDebugAndroidTestResources-2 /home/nada/AndroidStudioProjects/tictactoe/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.example.tic_tac_toe.test.app-mergeDebugAndroidTestResources-3 /home/nada/AndroidStudioProjects/tictactoe/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.example.tic_tac_toe.test.app-debugAndroidTest-4 /home/nada/AndroidStudioProjects/tictactoe/app/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources

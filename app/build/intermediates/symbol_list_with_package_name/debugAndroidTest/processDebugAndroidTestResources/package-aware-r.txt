@@ -1,0 +1,3 @@
+com.example.tic_tac_toe.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme
