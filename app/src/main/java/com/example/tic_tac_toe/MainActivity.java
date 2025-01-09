@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private String playerUniqueId = "0";
 
     // getting firebase database reference from URL
-    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://tic-tac-toe-1d958-default-rtdb.europe-west1.firebasedatabase.app/");
+    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://tic-tac-toe-d22b6-default-rtdb.europe-west1.firebasedatabase.app/");
 
     // true when opponent will be found to play the game
     private boolean opponentFound = false;

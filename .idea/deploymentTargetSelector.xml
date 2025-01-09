@@ -4,10 +4,10 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DIALOG" />
-        <DropdownSelection timestamp="2024-12-26T13:51:01.834348723Z">
+        <DropdownSelection timestamp="2024-12-30T18:15:51.422942582Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=/home/nada/.android/avd/Pixel_7_API_30.avd" />
+              <DeviceId pluginId="PhysicalDevice" identifier="serial=HQ619618EF" />
             </handle>
           </Target>
         </DropdownSelection>
@@ -20,7 +20,7 @@
             </Target>
             <Target type="DEFAULT_BOOT">
               <handle>
-                <DeviceId pluginId="LocalEmulator" identifier="path=/home/nada/.android/avd/Pixel_8_API_30.avd" />
+                <DeviceId pluginId="LocalEmulator" identifier="path=/home/nada/.android/avd/Pixel_7_API_30_2.avd" />
               </handle>
             </Target>
           </targets>
